@@ -1,8 +1,16 @@
-count = int(input("How many times do you want to add? "))
-step = float(input("What do you want to count by? "))
+import string
 
-total = 0
+import random
 
-for i in range(count):
-    total = total + step
-    print(f"Round {i + 1}: {total}")
+characters = (string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation + string.ascii_lowercase + string.ascii_lowercase + string.ascii_uppercase)
+
+digits = int(input("What is the number of characters you want to have in your password? "))
+
+if digits <= 0:
+    print("You must choose an answer bigger than 1")
+
+else:
+    print("Your Password Is: ", end="")
+    for i in range(digits):
+        print(random.choice(characters), end="")
+
